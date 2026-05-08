@@ -331,6 +331,7 @@ footer strong { color: rgba(255,255,255,.7); }
     <a href="#fluxo">Fluxo</a>
     <a href="#prazos">Prazos</a>
     <a href="#scripts">Scripts</a>
+    <a href="#arquitetura">Arquitetura</a>
     <a href="#melhorias">Melhorias</a>
   </div>
 </nav>
@@ -879,10 +880,48 @@ Número do protocolo deste atendimento: [Nº DE PROTOCOLO].</div>
   </div>
 </section>
 
+<!-- DECISÕES DE ARQUITETURA -->
+<section id="arquitetura">
+  <div class="container">
+    <div class="section-label">05 — Decisões de Arquitetura</div>
+    <h2 class="section-title">O que foi escolhido e por quê</h2>
+    <p class="section-desc">As decisões abaixo foram tomadas conscientemente, com base no perfil do caso de uso e no objetivo de simplicidade e velocidade de implementação.</p>
+
+    <div class="gains-grid">
+
+      <div class="gain-card">
+        <div class="gain-icon blue">🧭</div>
+        <div>
+          <div class="gain-title">Fluxo linear em vez de Intents</div>
+          <div class="gain-desc">O modelo adota um fluxo linear baseado em número único de evento, em vez de reconhecimento de intenções (intents) como usado em plataformas como Dialogflow ou IBM Watson. O caso de uso é específico e bem delimitado — o prestador sempre precisa de um número de evento para obter qualquer resposta útil. Isso elimina ambiguidade sem necessidade de processamento de linguagem natural, simplifica a implementação e é igualmente eficaz para o perfil de atendimento atual.</div>
+        </div>
+      </div>
+
+      <div class="gain-card">
+        <div class="gain-icon blue">🔢</div>
+        <div>
+          <div class="gain-title">Número do evento informado manualmente em vez de Entities</div>
+          <div class="gain-desc">O mercado usa extração automática de entidades, onde o bot identifica o número do evento mesmo em frases não estruturadas como "é o evento 12345 que fiz em Goiânia". No modelo atual, o número é informado diretamente — decisão adequada para o perfil dos prestadores, que já utilizam o número do evento no Fluig como referência principal no dia a dia.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:rgba(26,79,138,.06);border:1px solid rgba(26,79,138,.2);border-radius:14px;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;margin-top:1.5rem;">
+      <span style="font-size:1.2rem;margin-top:.1rem;">🔭</span>
+      <div>
+        <div style="font-weight:700;color:var(--navy);font-size:.9rem;margin-bottom:.3rem;">Evolução futura</div>
+        <div style="font-size:.83rem;color:var(--muted);line-height:1.65;">A adoção de <strong>intents</strong> pode ser considerada em fases posteriores, se houver necessidade de entender frases livres como <em>"quero saber do meu evento de março"</em>. A adoção de <strong>entities</strong> pode ser considerada para extração automática do número do evento em frases não estruturadas. A <strong>integração via API com o Fluig</strong> permitiria consulta de status em tempo real, eliminando a necessidade de base de dados manual.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- MELHORIAS -->
 <section id="melhorias">
   <div class="container">
-    <div class="section-label">05 — Melhorias Complementares</div>
+    <div class="section-label">06 — Melhorias Complementares</div>
     <h2 class="section-title">Ações de alto impacto, baixo esforço</h2>
     <p class="section-desc">Independentes do chatbot — podem ser implementadas antes mesmo da automação e já reduzem o volume de atendimento.</p>
 
