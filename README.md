@@ -68,16 +68,19 @@ Prestador informa o número do evento
 
 ## Scripts de atendimento
 
-| # | Cenário | Tipo |
-|---|---|---|
-| 01 | Abertura e Identificação | Automático |
-| 02 | Evento não está com status Realizado | Automático |
-| 03 | F9 / Relatório ainda não entregue | Automático |
-| 04 | Em análise — dentro do prazo | Automático |
-| 05 | Pendência identificada — aguardando correção | Automático |
-| 06 | Prestação de contas gerada com sucesso | Automático |
-| 07 | Anomalia — prazo vencido sem geração | Escala humano |
-| 08 | Encerramento do atendimento | Automático |
+| # | Cenário | Perfil | Tipo |
+|---|---|---|---|
+| 01 | Abertura e Identificação (com menu de perfil) | Ambos | Automático |
+| 02 | Evento não está com status Realizado | Instrutor | Automático |
+| M2 | Evento não está com status Realizado | Mobilizador/Parceiro | Automático |
+| 03 | F9 / Relatório ainda não entregue | Instrutor | Automático |
+| M3 | F9 / Relatório ainda não entregue | Mobilizador/Parceiro | Automático |
+| 04 | Em análise — dentro do prazo | Ambos | Automático |
+| 05 | Pendência identificada — aguardando correção | Instrutor | Automático |
+| M5 | Pendência identificada — aguardando instrutor | Mobilizador/Parceiro | Automático |
+| 06 | Prestação de contas gerada com sucesso | Ambos | Automático |
+| 07 | Anomalia — prazo vencido sem geração | Ambos | Escala humano |
+| 08 | Encerramento do atendimento | Ambos | Automático |
 
 ---
 
@@ -131,4 +134,4 @@ O mercado usa extração automática de entidades, onde o bot identifica o núme
 
 **Elaborado por:** Ricardo Linhares  
 **Departamento:** DAF — Gestão de Contratos  
-**Versão:** 1.0 — Piloto 2026
+**Versão:** 1.1 — Mobilizador/Parceiro (2026)

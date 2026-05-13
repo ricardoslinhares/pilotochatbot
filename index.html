@@ -232,6 +232,9 @@ section { padding: 5rem 2rem; }
 }
 .script-badge.auto  { background: rgba(0,168,120,.1); color: var(--accent); }
 .script-badge.human { background: rgba(230,57,70,.1); color: var(--coral); }
+.script-badge.perfil-amb  { background: rgba(90,110,133,.08); color: var(--muted); }
+.script-badge.perfil-inst { background: rgba(26,79,138,.1);   color: var(--blue); }
+.script-badge.perfil-mob  { background: rgba(109,40,217,.1);  color: #7c3aed; }
 .script-chevron { color: var(--muted); transition: transform .25s; font-size: 1rem; }
 .script-body { display: none; padding: 0 1.5rem 1.25rem; border-top: 1px solid var(--border); }
 .script-body.open { display: block; }
@@ -351,7 +354,7 @@ footer strong { color: rgba(255,255,255,.7); }
       <span class="hero-meta-sep">·</span>
       <span class="hero-meta-item">3 canais de entrada</span>
       <span class="hero-meta-sep">·</span>
-      <span class="hero-meta-item">8 scripts mapeados</span>
+      <span class="hero-meta-item">11 scripts · 2 perfis</span>
     </div>
     <div style="margin-top:1.5rem;font-size:.75rem;color:rgba(255,255,255,.3);letter-spacing:.06em;">Elaborado por <span style="color:rgba(255,255,255,.55);font-weight:600;">Ricardo Linhares</span> &nbsp;·&nbsp; Versão Piloto</div>
   </div>
@@ -381,9 +384,9 @@ footer strong { color: rgba(255,255,255,.7); }
         <div class="kpi-desc">WhatsApp, e-mail e Fluig — atendimento unificado</div>
       </div>
       <div class="kpi-card coral">
-        <div class="kpi-number">8</div>
+        <div class="kpi-number">11</div>
         <div class="kpi-label">Scripts mapeados</div>
-        <div class="kpi-desc">Cobrindo todos os cenários do fluxo de prestação de contas</div>
+        <div class="kpi-desc">Cobrindo todos os cenários — para Instrutor e Mobilizador/Parceiro</div>
       </div>
     </div>
 
@@ -439,7 +442,7 @@ footer strong { color: rgba(255,255,255,.7); }
   <div class="container">
     <div class="section-label">02 — Fluxo de Atendimento</div>
     <h2 class="section-title">Como o chatbot toma decisões</h2>
-    <p class="section-desc">Cada consulta passa por uma cadeia de verificações automáticas. O chatbot só escala para humano quando há anomalia real ou situação fora do padrão.</p>
+    <p class="section-desc">Cada consulta passa por uma cadeia de verificações automáticas. O chatbot só escala para humano quando há anomalia real ou situação fora do padrão. O fluxo de verificação é idêntico para Instrutor e Mobilizador/Parceiro — os scripts variam conforme o perfil identificado na abertura.</p>
 
     <div class="flow-wrapper" style="padding:2rem;">
     <style>
@@ -721,7 +724,7 @@ footer strong { color: rgba(255,255,255,.7); }
   <div class="container">
     <div class="section-label">04 — Scripts de Atendimento</div>
     <h2 class="section-title">Mensagens para cada cenário</h2>
-    <p class="section-desc">8 scripts institucionais em tom formal, cobrindo todos os caminhos do fluxo. Clique em cada um para expandir.</p>
+    <p class="section-desc">11 scripts institucionais em tom formal, organizados por perfil de atendimento — Instrutor e Mobilizador/Parceiro. Clique em cada um para expandir.</p>
 
     <div class="script-accordion">
 
@@ -730,6 +733,7 @@ footer strong { color: rgba(255,255,255,.7); }
           <div class="script-num">01</div>
           <div class="script-title">Abertura e Identificação</div>
           <div class="script-badge auto">Automático</div>
+          <div class="script-badge perfil-amb">Ambos os perfis</div>
           <div class="script-chevron">▾</div>
         </div>
         <div class="script-body">
@@ -738,7 +742,12 @@ footer strong { color: rgba(255,255,255,.7); }
 
 Sou o canal de atendimento digital do Departamento de Gestão de Contratos para consultas sobre prestação de contas de eventos.
 
-Para dar continuidade ao seu atendimento, por favor informe o número do evento sobre o qual deseja consultar.</div>
+Para dar continuidade ao seu atendimento, por favor informe com qual perfil você está entrando em contato:
+
+(1) Instrutor / Prestador de serviço
+(2) Mobilizador / Parceiro
+
+Em seguida, informe o número do evento sobre o qual deseja consultar.</div>
           <div class="script-note">📌 Se o prestador não souber o número, orientar: "O número do evento está disponível no painel do Fluig, na lista de eventos vinculados ao seu cadastro."</div>
         </div>
       </div>
@@ -748,6 +757,7 @@ Para dar continuidade ao seu atendimento, por favor informe o número do evento 
           <div class="script-num">02</div>
           <div class="script-title">Evento não está com status "Realizado"</div>
           <div class="script-badge auto">Automático</div>
+          <div class="script-badge perfil-inst">Instrutor</div>
           <div class="script-chevron">▾</div>
         </div>
         <div class="script-body">
@@ -764,9 +774,30 @@ Posso ajudá-lo com mais alguma consulta?</div>
 
       <div class="script-item" onclick="toggleScript(this)">
         <div class="script-header">
+          <div class="script-num" style="background:#7c3aed;">M2</div>
+          <div class="script-title">Evento não está com status "Realizado"</div>
+          <div class="script-badge auto">Automático</div>
+          <div class="script-badge perfil-mob">Mobilizador/Parceiro</div>
+          <div class="script-chevron">▾</div>
+        </div>
+        <div class="script-body">
+          <div class="script-context">Acionado quando o evento não possui status "Realizado" no Fluig — para Mobilizador/Parceiro.</div>
+          <div class="script-msg">Verificamos o evento número [Nº DO EVENTO] em nosso sistema.
+
+No momento, este evento não está com o status "Realizado", condição obrigatória para o início do processo de prestação de contas.
+
+A atualização desse status é de responsabilidade do instrutor responsável pelo evento no Fluig.
+
+Posso ajudá-lo com mais alguma consulta?</div>
+        </div>
+      </div>
+
+      <div class="script-item" onclick="toggleScript(this)">
+        <div class="script-header">
           <div class="script-num">03</div>
           <div class="script-title">F9 / Relatório ainda não entregue</div>
           <div class="script-badge auto">Automático</div>
+          <div class="script-badge perfil-inst">Instrutor</div>
           <div class="script-chevron">▾</div>
         </div>
         <div class="script-body">
@@ -784,9 +815,30 @@ Fico à disposição para outras consultas.</div>
 
       <div class="script-item" onclick="toggleScript(this)">
         <div class="script-header">
+          <div class="script-num" style="background:#7c3aed;">M3</div>
+          <div class="script-title">F9 / Relatório ainda não entregue</div>
+          <div class="script-badge auto">Automático</div>
+          <div class="script-badge perfil-mob">Mobilizador/Parceiro</div>
+          <div class="script-chevron">▾</div>
+        </div>
+        <div class="script-body">
+          <div class="script-context">Evento com status "Realizado", mas sem F9 entregue no Fluig — para Mobilizador/Parceiro.</div>
+          <div class="script-msg">O evento número [Nº DO EVENTO] está com status "Realizado". No entanto, ainda não identificamos a entrega do relatório (F9) no Fluig.
+
+Existe uma pendência com o instrutor para entrega do relatório — etapa necessária para o início da análise pelo DAF.
+
+O prazo para entrega é de 8 (oito) dias corridos após o último dia de realização do evento.
+
+Fico à disposição para outras consultas.</div>
+        </div>
+      </div>
+
+      <div class="script-item" onclick="toggleScript(this)">
+        <div class="script-header">
           <div class="script-num">04</div>
           <div class="script-title">Em análise — dentro do prazo</div>
           <div class="script-badge auto">Automático</div>
+          <div class="script-badge perfil-amb">Ambos os perfis</div>
           <div class="script-chevron">▾</div>
         </div>
         <div class="script-body">
@@ -806,6 +858,7 @@ Agradecemos a compreensão e permanecemos à disposição.</div>
           <div class="script-num">05</div>
           <div class="script-title">Pendência identificada — aguardando correção</div>
           <div class="script-badge auto">Automático</div>
+          <div class="script-badge perfil-inst">Instrutor</div>
           <div class="script-chevron">▾</div>
         </div>
         <div class="script-body">
@@ -823,9 +876,31 @@ Caso não tenha recebido o e-mail ou tenha dúvidas sobre as pendências, entre 
 
       <div class="script-item" onclick="toggleScript(this)">
         <div class="script-header">
+          <div class="script-num" style="background:#7c3aed;">M5</div>
+          <div class="script-title">Pendência identificada — aguardando instrutor</div>
+          <div class="script-badge auto">Automático</div>
+          <div class="script-badge perfil-mob">Mobilizador/Parceiro</div>
+          <div class="script-chevron">▾</div>
+        </div>
+        <div class="script-body">
+          <div class="script-context">Evento devolvido por pendência; aguardando ação do instrutor — para Mobilizador/Parceiro.</div>
+          <div class="script-msg">O evento número [Nº DO EVENTO] possui uma pendência identificada pelo DAF.
+
+Estamos aguardando que o instrutor realize os ajustes necessários e reenvie o relatório (F9). O prazo de 10 dias para a geração da prestação de contas será contado a partir da nova data de entrega.
+
+Para mais informações, sugerimos entrar em contato com o instrutor responsável pelo evento.
+
+Fico à disposição para outras consultas.</div>
+          <div class="script-note">📌 Não há limite de devoluções. Este script se repete a cada ciclo de pendência.</div>
+        </div>
+      </div>
+
+      <div class="script-item" onclick="toggleScript(this)">
+        <div class="script-header">
           <div class="script-num">06</div>
           <div class="script-title">Prestação de contas gerada com sucesso</div>
           <div class="script-badge auto">Automático</div>
+          <div class="script-badge perfil-amb">Ambos os perfis</div>
           <div class="script-chevron">▾</div>
         </div>
         <div class="script-body">
@@ -846,6 +921,7 @@ Fico à disposição.</div>
           <div class="script-num">07</div>
           <div class="script-title">Anomalia — prazo vencido sem geração</div>
           <div class="script-badge human">Escala humano</div>
+          <div class="script-badge perfil-amb">Ambos os perfis</div>
           <div class="script-chevron">▾</div>
         </div>
         <div class="script-body">
@@ -866,6 +942,7 @@ Pedimos desculpas pelo transtorno e agradecemos a compreensão.</div>
           <div class="script-num">08</div>
           <div class="script-title">Encerramento do atendimento</div>
           <div class="script-badge auto">Automático</div>
+          <div class="script-badge perfil-amb">Ambos os perfis</div>
           <div class="script-chevron">▾</div>
         </div>
         <div class="script-body">
@@ -951,7 +1028,7 @@ Número do protocolo deste atendimento: [Nº DE PROTOCOLO].</div>
 <!-- FOOTER -->
 <footer>
   <strong>SENAR Goiás</strong> — Departamento de Gestão de Contratos (DAF) &nbsp;·&nbsp; Proposta de Implementação — 2026<br>
-  <span style="margin-top:.4rem;display:block;">Elaborado por <strong>Ricardo Linhares</strong> &nbsp;·&nbsp; Documento piloto — encaminhado para análise</span>
+  <span style="margin-top:.4rem;display:block;">Elaborado por <strong>Ricardo Linhares</strong> &nbsp;·&nbsp; Versão 1.1 — Mobilizador/Parceiro</span>
 </footer>
 
 <script>
